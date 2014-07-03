@@ -10,17 +10,17 @@ int main (int argc, char **argv)
     int amountofline = 0;
 
     while(1) {
-    	unsigned char buffer = 0x00;
+        unsigned char buffer = 0x00;
 
-    	scanf("%c",&buffer);
-    	if(amountofline < w.ws_col) {
-    		printf("%c",buffer);
-    		amountofline++;
-    	} else if(buffer == '\n') {
-    		amountofline = 0;
-    		printf("\n");
-    	}
+        scanf("%c",&buffer);
+        if(amountofline < w.ws_col) {
+            printf("%c",buffer);
+            amountofline++;
+        } else if(buffer == '\n') {
+            amountofline = 0;
+            printf("\n");
+        }
     }
 
-    return 0;  // make sure your main returns int
+    return 0;
 }
