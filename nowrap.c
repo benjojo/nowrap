@@ -8,11 +8,12 @@ int main (int argc, char **argv)
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     
     int amountofline = 0;
+    unsigned char buffer;
 
-    while(1) {
-        unsigned char buffer = 0x00;
-
+    do {
+        buffer = 0;
         scanf("%c",&buffer);
+
         if(amountofline < w.ws_col) {
             printf("%c",buffer);
             amountofline++;
@@ -20,7 +21,7 @@ int main (int argc, char **argv)
             amountofline = 0;
             printf("\n");
         }
-    }
+    } while(buffer != EOF && buffer != 0);
 
     return 0;
 }
